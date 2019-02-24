@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JarnoLeConte/grpc-experiment-protos/issues"
   },
-  "homepage": "https://github.com/JarnoLeConte/grpc-experiment-protos#readme"
+  "homepage": "https://github.com/JarnoLeConte/grpc-experiment-protos#readme",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.4.0"
+  }
 }

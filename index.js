@@ -1,6 +1,7 @@
 const path = require('path');
+const protoLoader = require('@grpc/proto-loader');
 
-const protoOptions = {
+const defaultProtoOptions = {
   keepCase: false,
   longs: String,
   enums: Number,
@@ -13,8 +14,15 @@ function getProtoPath(...paths) {
   return path.join(__dirname, 'protos', ...paths);
 }
 
+function loadSync(protoFile, protoOptions = {}) {
+    const file = getProtoPath(protoFile);
+    const options = { ...defaultProtoOptions, ...protoOptions };
+    const packageDefinition = protoLoader.loadSync(file, options);
+    return packageDefinition;
+}
 
 module.exports = {
-    protoOptions,
+    defaultProtoOptions,
     getProtoPath,
+    loadSync,
 };
