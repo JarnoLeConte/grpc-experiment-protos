@@ -7,8 +7,8 @@ package api.location;
 
 message Location {
   uint32 id = 1;
-  uint32 lat = 2;
-  uint32 lon = 3;
+  float lat = 2;
+  float lon = 3;
 }
 
 /* Create */
@@ -105,6 +105,20 @@ message ListResponse {
   enum Error {
     ERROR_ACTION_FAILED = 0;
   }
+}
+
+/* Reshape Location */
+
+message ReshapeRequest {
+  uint32 width = 1;
+  uint32 height = 2;
+  float lat = 3;
+  float lon = 4;
+}
+
+message ReshapeResponse {
+  float x = 1;
+  float y = 2;
 }
 
 

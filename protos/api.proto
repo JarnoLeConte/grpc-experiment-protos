@@ -20,4 +20,5 @@ service Api {
   rpc UpdateLocation (api.location.UpdateRequest) returns (api.location.UpdateResponse) {}
   rpc DeleteLocation (api.location.DeleteRequest) returns (api.location.DeleteResponse) {}
   rpc ListLocation (api.location.ListRequest) returns (api.location.ListResponse) {}
+  rpc ReshapeLocation (stream api.location.ReshapeRequest) returns (stream api.location.ReshapeResponse) {}
 }
